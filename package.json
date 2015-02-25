@@ -1,0 +1,45 @@
+{
+  "name": "hadtodo-web",
+  "version": "0.1.0",
+  "description": "hadtodo web interface",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hadtodo/hadtodo-web.git"
+  },
+  "keywords": [
+    "hadtodo",
+    "todo",
+    "list",
+    "web"
+  ],
+  "contributors": [
+    {
+      "name": "Mateusz \"m4tx\" Maćkowski",
+      "email": "m4tx@m4tx.pl",
+      "url": "http://m4tx.pl"
+    },
+    {
+      "name": "Michał \"poxip\" Proszek",
+      "email": "michal.proszek@gmail.com",
+      "url": "http://poxip.ml"
+    }
+  ],
+  "license": "AGPLv3",
+  "bugs": {
+    "url": "https://github.com/hadtodo/hadtodo-web/issues"
+  },
+  "homepage": "https://github.com/hadtodo/hadtodo-web",
+  "devDependencies": {
+    "http-server": "^0.6.1",
+    "bower": "^1.3.1"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "hadtodo-web",
+  "version": "0.1.0",
+  "homepage": "https://github.com/hadtodo/hadtodo-web",
+  "authors": [
+    "m4tx <m4tx@m4tx.pl>",
+    "poxip <michal.proszek@gmail.com>"
+  ],
+  "description": "hadtodo web interface",
+  "keywords": [
+    "hadtodo",
+    "todo",
+    "list",
+    "web"
+  ],
+  "license": "AGPLv3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.3.x",
+    "angular-route": "1.3.x"
+  }
+}
