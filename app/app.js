@@ -1,4 +1,4 @@
-var app = angular.module('StarterApp', ['ngMaterial']);
+var app = angular.module('starterApp', ['ngMaterial']);
 
 app.controller('AppController', ['$scope', '$mdSidenav', '$mdDialog',
     function ($scope, $mdSidenav, $mdDialog) {
