@@ -2,7 +2,7 @@ var app = angular.module('hadtodoApp', ['satellizer']);
 
 app.controller('AppCtrl', ['$scope', function ($scope) {
     $scope.initNavbar = function () {
-        $('.dropdown').dropdown({
+        jQuery('.dropdown').dropdown({
             action: 'hide'
         });
     }
