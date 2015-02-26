@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="bower_components/semantic-ui/dist/semantic.min.css">
     <link rel="stylesheet" href="css/app.css">
 </head>
-<body ng-controller="AppController">
-    <div class="ui secondary pointing menu">
+<body ng-controller="AppCtrl">
+    <div class="ui menu">
         <div class="container-fixed">
             <a class="active item">
                 HadTodo
@@ -23,7 +23,21 @@
                         <i class="search link icon"></i>
                     </div>
                 </div>
-                <a class="ui item">
+                <div ng-controller="LoginCtrl" class="ui pointing dropdown link item">
+                    <i class="dropdown icon"></i>
+                    <span class="text">Login</span>
+                    <div class="menu">
+                        <div class="item" ng-click="authenticate('facebook')">
+                            <i class="blue facebook icon"></i>
+                            Facebook
+                        </div>
+                        <div class="item" ng-click="authenticate('google')">
+                            <i class="red google icon"></i>
+                            Google+
+                        </div>
+                    </div>
+                </div>
+                <a class="ui link item">
                     Logout
                 </a>
             </div>
@@ -38,10 +52,18 @@
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/semantic-ui/dist/semantic.min.js"></script>
+    <script src="bower_components/satellizer/satellizer.min.js"></script>
 
     <!-- Application -->
     <script src="app.js"></script>
 
     <!-- Controllers -->
+    <script src="controllers/login.js"></script>
+
+    <!-- GUI Stuff -->
+    <script src="ui.js"></script>
+
+    <!-- Livereload - only for development -->
+    <script src="//localhost:35729/livereload.js"></script>
 </body>
 </html>
