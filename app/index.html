@@ -23,7 +23,7 @@
                         <i class="search link icon"></i>
                     </div>
                 </div>
-                <div ng-controller="LoginCtrl" ng-if="!isAuthenticated()" class="ui pointing dropdown link item">
+                <div ng-controller="LoginCtrl" ng-hide="isAuthenticated()" class="ui pointing dropdown link item">
                     <i class="dropdown icon"></i>
                     <span class="text">Login</span>
                     <div class="menu">
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                 </div>
-                <div ng-if="isAuthenticated()" class="ui link item logout">
+                <div ng-show="isAuthenticated()" class="ui link item logout">
                     Logout
                 </div>
             </div>
