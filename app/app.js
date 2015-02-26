@@ -5,10 +5,10 @@ app.controller('AppCtrl', ['$scope', function ($scope) {
 
 app.config(function($authProvider) {
     $authProvider.facebook({
-        clientId: 'client id here'
+        clientId: 'CLIENTID'
     });
 
     $authProvider.google({
-        clientId: 'client id here'
+        clientId: 'CLIENTID'
     });
 });

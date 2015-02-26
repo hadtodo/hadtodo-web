@@ -10,43 +10,8 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body ng-controller="AppCtrl">
-    <div class="ui menu">
-        <div class="container-fixed">
-            <a class="active item">
-                HadTodo
-            </a>
-
-            <div class="right menu">
-                <div class="item">
-                    <div class="ui icon input">
-                        <input type="text" placeholder="Search...">
-                        <i class="search link icon"></i>
-                    </div>
-                </div>
-                <div ng-controller="LoginCtrl" ng-hide="isAuthenticated()" class="ui pointing dropdown link item">
-                    <i class="dropdown icon"></i>
-                    <span class="text">Login</span>
-                    <div class="menu">
-                        <div class="item" ng-click="authenticate('facebook')">
-                            <i class="blue facebook icon"></i>
-                            Facebook
-                        </div>
-                        <div class="item" ng-click="authenticate('google')">
-                            <i class="red google icon"></i>
-                            Google+
-                        </div>
-                    </div>
-                </div>
-                <div ng-show="isAuthenticated()" class="ui link item logout">
-                    Logout
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fixed">
-        Content here...
-    </div>
+    <ng-include src=" 'views/navbar.html' "></ng-include>
+    <ng-include src=" 'views/todolist.html' "></ng-include>
 
     <!-- 3rd party scripts -->
     <script src="bower_components/angular/angular.min.js"></script>
@@ -59,6 +24,7 @@
 
     <!-- Controllers -->
     <script src="controllers/login.js"></script>
+    <script src="controllers/todolist.js"></script>
 
     <!-- GUI Stuff -->
     <script src="ui.js"></script>
