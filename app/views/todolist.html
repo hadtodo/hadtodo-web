@@ -1,3 +1,10 @@
-<div class="container-fixed">
-    Content here...
+<div ng-controller="TodoListCtrl" class="container-fixed">
+    <div ng-repeat="item in items" class="todo-item" ng-class="{ done: isDone(item) }">
+        <div class="ui">
+            <input type="checkbox" ng-click="toggleDone($event, item)" ng-checked="isDone(item)">
+            <label>{{ item.text }}</label>
+        </div>
+    </div>
+
+    <button class="ui button" ng-click="addTodo()">Add todo</button>
 </div>
