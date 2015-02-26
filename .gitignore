@@ -28,5 +28,8 @@ bower_components
 # Users Environment Variables
 .lock-wscript
 
+# Cache files
+.sass-cache
+
 # Generated stuff
 app/css
