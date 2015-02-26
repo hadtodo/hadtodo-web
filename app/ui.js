@@ -2,6 +2,9 @@
  * User Interface releated stuff
  */
 
-$('.dropdown').dropdown({
-    action: 'hide'
+$(function () {
+    // Setup Semantic-Ui
+    $('.dropdown').dropdown({
+        action: 'hide'
+    });
 });

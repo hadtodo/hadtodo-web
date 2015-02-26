@@ -28,4 +28,8 @@ angular.module('hadtodoApp')
                     );
                 });
         };
+
+        $scope.isAuthenticated = function() {
+            return $auth.isAuthenticated();
+        };
     });
