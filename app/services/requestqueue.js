@@ -15,11 +15,26 @@
 
 'use strict';
 
+/*
+ * Service that handles all the requests sent to API, as well as processes errors if they occur.
+ */
+
 angular.module('hadtodoApp').factory('RequestQueueService', function ($http) {
     return {
         queue: [],
         running: false,
 
+        /**
+         * Add request to the queue.
+         *
+         * If queue is not currently being processed, then {@link RequestQueueService.processQueue}
+         * is also called and {@link RequestQueueService.running} is set to true.
+         *
+         * @param {Object} request Request to be passed to {@link $http}. Can also contain
+         *  `onSuccess` and `onError` properties, which will be treated as callback functions
+         *  whenever a success or error occurs. The functions may accept parameters:
+         *  `data, status, headers, config`.
+         */
         addRequest: function (request) {
             request.url = 'http://localhost:3000';
             this.queue.push(request);
@@ -30,7 +45,10 @@ angular.module('hadtodoApp').factory('RequestQueueService', function ($http) {
             }
         },
 
-        processQueue: function() {
+        /**
+         * Process the first item in request queue and move to others if the first one has succeeded.
+         */
+        processQueue: function () {
             var that = this;
             var request = this.queue[0];
 
@@ -54,6 +72,14 @@ angular.module('hadtodoApp').factory('RequestQueueService', function ($http) {
             });
         },
 
+        /**
+         * Return whether the queue is currently being processed.
+         *
+         * That means, the function returns true if a request was sent, and neither success nor
+         * error have occurred yet.
+         *
+         * @returns {boolean} `true` if the queue is currently being processed; `false` otherwise
+         */
         isRunning: function () {
             return this.running;
         }
