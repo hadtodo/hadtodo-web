@@ -1,0 +1,10 @@
+#request-queue {
+  .loader {
+    height: 1em;
+    margin-top: -6px;
+  }
+
+  &:before {
+    width: 0;
+  }
+}
