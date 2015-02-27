@@ -6,7 +6,8 @@
 
         <div class="right menu">
             <div class="ui item" id="request-queue" ng-controller="RequestQueueCtrl">
-                <div class="ui mini inline loader"></div>
+                <div class="ui mini inline loader" ng-class="{ active: isRunning() }">
+                </div>
             </div>
             <div class="item">
                 <div class="ui icon input">

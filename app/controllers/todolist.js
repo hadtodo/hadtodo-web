@@ -1,4 +1,4 @@
-angular.module('hadtodoApp').controller('TodoListCtrl', function ($scope) {
+angular.module('hadtodoApp').controller('TodoListCtrl', function ($scope, RequestQueueService) {
     $scope.isDone = function(item) {
         return item.done;
     };
@@ -11,6 +11,12 @@ angular.module('hadtodoApp').controller('TodoListCtrl', function ($scope) {
         $scope.items.push({
             text: 'Brand new todo!'
         });
+
+        var req = {
+            method: 'PUT',
+            data: { test: 'test' }
+        };
+        RequestQueueService.addRequest(req);
     };
 
     $scope.items = [
